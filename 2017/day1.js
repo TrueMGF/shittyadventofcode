@@ -3,6 +3,11 @@
     Output should be the sum of all the numbers that match it's next number. Last number is compared to 1st.
     Examples: 1122 => 1+2 = 3; 1111 => 1+1+1+1 = 4; 1234 => 0; 
 */
+/* Advanced
+    Input is the same.
+    Output should be the sum of all numbers that match the number 50% ahead in the string. String is a loop just like before.
+    Examples: 123425 => 2+2 = 4; 12131415 => 1+1+1+1 = 4; 1221 => 0;
+*/
 function solve(captcha) {
     let result = 0;
     captcha += captcha.substr(0,1);
