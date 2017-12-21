@@ -8,5 +8,21 @@ you'll get some meme like this:
 21  22  23---> ..
 now, get the manhattan distance from an input field to the field labeled 1.
 
-what have i done to deserve this
+hints i've taken: every "square" iteration has an odd square number on the bottom right
 */
+
+let input = 368078;
+
+function part1(input){
+    let sq_done = false;
+    let i = 1;
+    while (Math.pow(i,2) < input){
+        i+=2;
+    }
+    let min_dist = (i-1)/2;
+    console.log(i,Math.pow(i,2),Math.pow(i-2,2),min_dist);
+    console.log(`Between ${i-2}^2 and ${i}^2 are ${Math.pow(i,2)-Math.pow(i-2,2)} numbers. Our input is on position ${input-Math.pow(i-2,2)}`);
+    //The greatest distance should only be one eigth of this. The closer to a flat division by 4, the further away it has to be.
+}
+
+part1(input);
