@@ -19,10 +19,16 @@ function part1(input){
     while (Math.pow(i,2) < input){
         i+=2;
     }
-    let min_dist = (i-1)/2;
-    console.log(i,Math.pow(i,2),Math.pow(i-2,2),min_dist);
-    console.log(`Between ${i-2}^2 and ${i}^2 are ${Math.pow(i,2)-Math.pow(i-2,2)} numbers. Our input is on position ${input-Math.pow(i-2,2)}`);
+    let pos = input-Math.pow(i-2,2);
+    console.log(i,Math.pow(i,2),Math.pow(i-2,2));
+    console.log(`Between ${i-2}^2 and ${i}^2 are ${Math.pow(i,2)-Math.pow(i-2,2)} numbers. Our input is on position ${pos}`);
     //The greatest distance should only be one eigth of this. The closer to a flat division by 4, the further away it has to be.
+    //therefore: reduce the value we're looking for to the modulo of 1/4th of the total amount of possible numbers inbetween.
+    //let quarter_sq = (Math.pow(i,2)-Math.pow(i-2,2))/4; //turns out this is always i-1, and I have no fucking idea why.
+    pos = pos%(i-1);
+    let ohgodpleaseberight = (i-1)+Math.abs(((i-1)/2)-pos);
+    console.log((i-1)/2,pos,Math.abs(((i-1)/2)-pos),ohgodpleaseberight);
+
 }
 
 part1(input);
