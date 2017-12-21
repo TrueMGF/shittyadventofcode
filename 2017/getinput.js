@@ -1,3 +1,5 @@
+console.log("yeah this doesn't work, i'm no good with logins/apis");
+/*
 const fs = require("fs");
 let cookie = fs.readFileSync("./sekrit/cookie.txt");
 const readline = require("readline");
@@ -19,3 +21,4 @@ consoleinput.question("Enter day you wish to grab input from.",(num)=>{
     });
     request.on("error",err=>console.log(`Request encountered an error\n${err}`))
 });
+*/
